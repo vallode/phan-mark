@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Phan-mark</title>
+</head>
+<body>
+
+<header class="c-padding">
+  <div id="header__title">
+    <a href="/"><h1>Phan-Mark</h1></a>
+  </div>
+
+  <div class="header__form">
+    <form id="bookmark_form" class="form">
+      <input id="bookmark-input__name" type="text" placeholder="Bookmark Name">
+      <input id="bookmark-input__url" type="text" placeholder="Bookmark URL">
+
+      <input type="submit" value="Add">
+    </form>
+  </div>
+</header>
+
+
+<div id="notification-wrapper">
+  <template id="notification">
+    <div class="notification">
+      <p class="notification__message"></p>
+    </div>
+  </template>
+</div>
+
+<main class="c-padding">
+  <template id="bookmark">
+    <div data-id="" class="item">
+      <div class="item__link">
+        <a href="">
+          <h3>I am an example</h3>
+        </a>
+      </div>
+
+      <a class="item__link--delete">X</a>
+    </div>
+  </template>
+
+  <section id="bookmarks">
+
+  </section>
+
+  <div class="pagination">
+    <span class="pagination__button" data-direction="left" id="page_left"><</span>
+    <span class="pagination__number" id="page_number">1</span>
+    <span class="pagination__button" data-direction="right" id="page_right">></span>
+  </div>
+</main>
+
+<footer class="c-padding">
+  Made by <a href="https://vallode.com">Vallode</a> for the PHAmily
+</footer>
+
+<link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+<script src="js/main.js"></script>
+</body>
+</html>

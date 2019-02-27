@@ -1,0 +1,239 @@
+/*
+CSS Variables
+ */
+
+:root {
+  --red: #e27d60;
+  --cyan: #85dcb0;
+  --white: #f1f1f1;
+  --gray: #9b9b9b;
+  --black: #313131;
+}
+
+/*
+Document-wide changes
+
+house-keeping
+ */
+
+html {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  position: relative;
+
+  flex-direction: column;
+  min-height: 100%;
+
+  background-color: var(--white);
+  color: var(--black);
+
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+
+  margin: 0;
+}
+
+*, *::before, *::after {
+  position: relative;
+  box-sizing: border-box;
+}
+
+/*
+Helper classes
+ */
+
+.c-padding {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/*
+Layouts
+ */
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+header #header__title {
+  color: var(--red);
+  display: flex;
+  flex-grow: 1;
+}
+
+header #header__title a {
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+
+  flex-grow: 1;
+}
+
+footer {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 4rem 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  font-size: 2rem;
+
+  padding: 0 1rem 0 0;
+  margin: 1rem 0 2rem 0;
+}
+
+/*
+Typography
+ */
+
+h1,
+h2,
+h3 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  color: inherit;
+}
+
+/*
+Blocks
+ */
+
+#bookmarks {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  flex-flow: row wrap;
+
+  align-content: flex-start;
+}
+
+#bookmarks .item {
+  display: flex;
+  text-align: left;
+  align-items: center;
+
+  padding: 0 2rem;
+  margin: 0 1rem 1rem 0;
+
+  width: 40%;
+
+  max-height: 60px;
+  max-width: calc(50% - 1rem);
+  flex-grow: 1;
+
+  color: var(--black);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.item .item__link {
+  display: flex;
+  flex: 1;
+}
+
+.item .item__link--delete {
+  cursor: pointer;
+}
+
+.form input {
+  border: none;
+
+  margin: 0 1rem 0 0;
+  padding: 0.5rem 1rem;
+
+  border-radius: 2px;
+
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.form input::placeholder {
+  font-weight: bold;
+  color: var(--white);
+}
+
+#notification-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  pointer-events: none;
+
+  position: fixed;
+  bottom: 0;
+
+  z-index: 1000;
+}
+
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  font-weight: bold;
+  border-radius: 2px;
+
+  width: 500px;
+  height: 3rem;
+
+  margin: 1rem 0;
+
+  color: var(--white);
+  background-color: var(--cyan);
+
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  animation: notify-in 5s ease-out forwards;
+}
+
+.pagination .pagination__button {
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+.pagination #page_number {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/*
+Keyframes
+ */
+
+@keyframes notify-in {
+  0% {
+    transform: translateY(calc(100% + 2rem));
+  }
+
+  10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
+    transform: translateY(0);
+  }
+
+  99% {
+    transform: translateY(calc(100% + 2rem));
+  }
+
+  100% {
+    transform: translateY(calc(100% + 2rem));
+    display: none;
+  }
+}
