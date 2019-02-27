@@ -29,7 +29,7 @@ const addBookmark = (id, name, url) => {
 
   bookmark.querySelector('.item').dataset.id = id;
   bookmark.querySelector('.item__link h3').textContent = name;
-  bookmark.querySelector('.item__link').href = url;
+  bookmark.querySelector('.item__link a').href = url;
   bookmark.querySelector('.item__link--delete').addEventListener('click', removeBookmark);
 
   if (bookmarks.length > (20 * totalPages)) {
